@@ -37,14 +37,6 @@ export const validateConfig = () => {
         "Configured but not exported:",
         discrepancies.configuredButNotExported,
       );
-      core.setOutput(
-        "exportedButNotConfigured",
-        Array.from(discrepancies.exportedButNotConfigured).join(", "),
-      );
-      core.setOutput(
-        "configuredButNotExported",
-        Array.from(discrepancies.configuredButNotExported).join(", "),
-      );
     } else {
       console.log(
         "No discrepancies found between TypeScript exports and Firebase functions configuration.",
