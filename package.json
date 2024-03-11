@@ -1,0 +1,20 @@
+{
+  "name": "hosting-gh-action",
+  "version": "1.0.0",
+  "description": "Github action for verifying that all exported cloud functions also have a hosting config",
+  "main": "index.js",
+  "author": "Jackson Prowell",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "ts-node src/validate.ts"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1"
+  }
+}
