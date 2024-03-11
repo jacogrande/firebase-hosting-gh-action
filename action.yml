@@ -8,6 +8,10 @@ inputs:
   firebase-config-path:
     description: "Path to your firebase.json file"
     required: true
+  ignored-functions:
+    description: "A space-separated list of function names to ignore discrepancies for"
+    required: false
+    default: ""
 runs:
   using: "node20"
   main: "dist/index.js"

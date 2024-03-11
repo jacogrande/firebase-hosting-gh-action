@@ -6,6 +6,11 @@ import { getExportedFunctionNames } from "./getExportedFunctionNames";
 
 const indexPath = core.getInput("index-path");
 const firebaseConfigPath = core.getInput("firebase-config-path");
+// Retrieve the ignored-functions input and split it into an array
+const ignoredFunctionsInput = core.getInput("ignored-functions");
+const ignoredFunctions = ignoredFunctionsInput
+  ? ignoredFunctionsInput.split(" ")
+  : [];
 
 export const validateConfig = () => {
   try {
@@ -19,6 +24,7 @@ export const validateConfig = () => {
     const discrepancies = getDiscrepancies(
       exportedFunctions,
       configuredFunctions,
+      ignoredFunctions,
     );
 
     // Report discrepancies
