@@ -1,0 +1,13 @@
+name: "Cloud Function Hosting Check"
+description: "Ensure all exported functions also have a hosting config"
+author: "Jackson Prowell"
+inputs:
+  index-path:
+    description: "Path to your Firebase cloud function index.ts file"
+    required: true
+  firebase-config-path:
+    description: "Path to your firebase.json file"
+    required: true
+runs:
+  using: "node20"
+  main: "dist/validate.js"
