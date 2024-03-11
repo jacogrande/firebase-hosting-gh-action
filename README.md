@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - uses: your-username/firebase-functions-validation-action@main
+      - uses: jacogrande/firebase-hosting-gh-action@main
         with:
           index-path: "./src/index.ts"
           firebase-config-path: "./firebase.json"
